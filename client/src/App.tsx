@@ -1,45 +1,73 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import get from "lodash/get";
+import * as React from "react";
+import InputField from "./components/inputField";
 
-function App() {
-  const [count, setCount] = useState(0)
+const defaultForm = {
+  addressTo: "",
+  amount: "",
+  keyword: "",
+  message: "",
+};
+
+const App = () => {
+  const [form, setForm] = React.useState(defaultForm);
+
+  const connectWallet = () => {};
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const name = get(event, "target.name", "");
+    const value = get(event, "target.value", "");
+    setForm((prevForm) => ({
+      ...prevForm,
+      [name]: value,
+    }));
+  };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <div className="p-5 flex justify-e">
+        <button onClick={connectWallet} type="button">
+          Connect
+        </button>
+      </div>
+      <div>
+        <InputField
+          value={get(form, "addressTo", "")}
+          placeholder="Address To"
+          name="addressTo"
+          type="text"
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <InputField
+          value={get(form, "amount", "")}
+          placeholder="Amount (ETH)"
+          name="amount"
+          type="number"
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <InputField
+          value={get(form, "keyword", "")}
+          placeholder="Keyword (Gif)"
+          name="keyword"
+          type="text"
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <InputField
+          value={get(form, "message", "")}
+          placeholder="Enter Message"
+          name="message"
+          type="text"
+          onChange={handleChange}
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
