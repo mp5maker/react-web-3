@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 
 const Button: React.FC<React.InputHTMLAttributes<HTMLButtonElement>> = (otherProps) => {
     const props: any = {
@@ -6,8 +6,8 @@ const Button: React.FC<React.InputHTMLAttributes<HTMLButtonElement>> = (otherPro
     }
 
     return (
-        <input {...props} />
-    )
+    <button className={'p-2 border-black border rounded-sm text-center w-full'} {...props} />
+    );
 }
 
 export default Button;

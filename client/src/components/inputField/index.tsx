@@ -10,7 +10,7 @@ const InputField: React.FC<IInputField> = (otherProps) => {
     }
 
     return (
-        <input {...props} />
+        <input className={'p-2 border-black border rounded-sm'} {...props} />
     )
 }
 

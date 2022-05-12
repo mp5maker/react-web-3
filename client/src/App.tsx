@@ -30,54 +30,56 @@ const App = () => {
   };
 
   return (
-    <div className="App p-5">
-      <div className="flex justify-e">
-        <Button onClick={connectWallet} type="button">
-          Connect
-        </Button>
-      </div>
+    <div className="App p-5 flex justify-center items-center">
       <div>
-        <form onSubmit={onSubmit}>
-          <div className="mt-2">
-            <InputField
-              value={get(form, "addressTo", "")}
-              placeholder="Address To"
-              name="addressTo"
-              type="text"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mt-2">
-            <InputField
-              value={get(form, "amount", "")}
-              placeholder="Amount (ETH)"
-              name="amount"
-              type="number"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mt-2">
-            <InputField
-              value={get(form, "keyword", "")}
-              placeholder="Keyword (Gif)"
-              name="keyword"
-              type="text"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mt-2">
-            <InputField
-              value={get(form, "message", "")}
-              placeholder="Enter Message"
-              name="message"
-              type="text"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mt-2">
-            <Button>Submit</Button>
-          </div>
-        </form>
+        <div>
+          <Button onClick={connectWallet} type="button">
+            Connect
+          </Button>
+        </div>
+        <div className="flex flex">
+          <form onSubmit={onSubmit}>
+            <div className="mt-2">
+              <InputField
+                value={get(form, "addressTo", "")}
+                placeholder="Address To"
+                name="addressTo"
+                type="text"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="mt-2">
+              <InputField
+                value={get(form, "amount", "")}
+                placeholder="Amount (ETH)"
+                name="amount"
+                type="number"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="mt-2">
+              <InputField
+                value={get(form, "keyword", "")}
+                placeholder="Keyword (Gif)"
+                name="keyword"
+                type="text"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="mt-2">
+              <InputField
+                value={get(form, "message", "")}
+                placeholder="Enter Message"
+                name="message"
+                type="text"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="mt-2">
+              <Button>Submit</Button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
