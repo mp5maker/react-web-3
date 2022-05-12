@@ -24,3 +24,13 @@ by following predefined rules set by the author
 yarn add --dev hardhat
 npx hardhat
 ```
+
+
+#### Resources
+
+Tailwind Setup - https://tailwindcss.com/docs/guides/c...
+Tailwind Docs - https://tailwindcss.com/docs
+ETH Ropsten Faucet 1 - https://faucet.egorfine.com
+ETH Ropsten Faucet 2 - https://faucet.dimensions.network
+Etherscan - https://ropsten.etherscan.io
+Alchemy - https://alchemy.com
