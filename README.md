@@ -19,10 +19,34 @@ by following predefined rules set by the author
 * Testing smart contracts is easy, as it is plug and play
 * To connect to the smart contract we need to use ether.js
 
-```bash
+#### Etherium Wallet [Meta Mask]
+* To get our own etherium wallet we need to get a meta mask.
+* At first we need to get MetaMask.
+* It is an google extension for accessing  Etherum enabled distributed applications
+* Creating an account requires a simple password
+* Password is not important, secret recovery phase is.
+* That is the master key and do not share it to anyone else
+* Allow the test networks
+* Choose the ropsten test network
+* To get a test ethers we need to search for ropsten testnet faucet.
+* Copy the account number from the meta mask and paste it to ropsten test faucet
+* To get test ethers, it takes from 30s to many hours.
 
+#### What is Alchemy in Ethereum?
+* Alchemy is a powerful blockchain developer platform providing a suite of developer tools.
+* Developers building apps which interact with Ethereum can use Alchemy's powerful APIs to supercharge their apps
+* Leverage features not available in vanilla nodes.
+* Create a account
+* Create an app using the ropsten network
+* Copy the api key for https in hardhat.config.js
+
+#### Hardhat Waffle?
+* This plugin is used build smart contract tests using Waffle in Hardhat.
+
+```bash
 yarn add --dev hardhat
 npx hardhat
+npx hardhat run scripts/deploy.js --network ropsten
 ```
 
 
